@@ -1,3 +1,8 @@
+/**
+ * @author huy.thai
+ * huyttq@gmail.com
+ */
+
 cordova.define("cordova/plugin/WebIntent",
   function (require, exports, module) {
     var exec = require("cordova/exec");
