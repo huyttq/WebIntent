@@ -88,7 +88,6 @@ public class WebIntent extends CordovaPlugin {
                 callbackContext.success();
 				return true;
             }
-			callbackContext.error(PluginResult.Status.INVALID_ACTION);
             return false;
         } catch (JSONException e) {
             e.printStackTrace();
