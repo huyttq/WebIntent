@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
+        id="org.apache.cordova.plugin.webintent"
+        version="0.0.1">
+
+    <engines>
+        <engine name="cordova" version=">=3.0.0" />
+    </engines>
+    <name>WebIntent</name>
+    <description>Cordova WebIntent Plugin</description>
+
+
+    <js-module src="www/webintent.js" name="webintent">
+        <clobbers target="WebIntent" />
+    </js-module>
+
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="WebIntent">
+                <param name="android-package" value="org.apache.cordova.plugin.webintent.WebIntent" />
+            </feature>
+        </config-file>
+
+        <source-file src="src/android/WebIntent.java" target-dir="src/org/apache/cordova/plugin/webintent" />
+    </platform>
+</plugin>
