@@ -31,19 +31,6 @@ import org.apache.cordova.PluginResult.Status;
  */
 public class WebIntent extends CordovaPlugin {
 
-    private String onNewIntentCallback = null;
-
-    /**
-     * Executes the request and returns PluginResult.
-     * 
-     * @param action
-     *            The action to execute.
-     * @param args
-     *            JSONArray of arguments for the plugin.
-     * @param callbackId
-     *            The callback id used when calling back into JavaScript.
-     * @return A PluginResult object with a status and message.
-     */
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
         try {
@@ -68,26 +55,7 @@ public class WebIntent extends CordovaPlugin {
                 startActivity(obj.getString("action"), uri, type, extrasMap);
                 callbackContext.success();
 				return true;
-            } else if (action.equals("sendBroadcast")) {
-                // Parse the arguments
-                JSONObject obj = args.getJSONObject(0);
-                JSONObject extras = obj.has("extras") ? obj.getJSONObject("extras") : null;
-                Map<String, String> extrasMap = new HashMap<String, String>();
-
-                // Populate the extras if any exist
-                if (extras != null) {
-                    JSONArray extraNames = extras.names();
-                    for (int i = 0; i < extraNames.length(); i++) {
-                        String key = extraNames.getString(i);
-                        String value = extras.getString(key);
-                        extrasMap.put(key, value);
-                    }
-                }
-
-                sendBroadcast(obj.getString("action"), extrasMap);
-                callbackContext.success();
-				return true;
-            }
+            }			
             return false;
         } catch (JSONException e) {
             e.printStackTrace();
@@ -123,16 +91,5 @@ public class WebIntent extends CordovaPlugin {
             }
         }
         ((DroidGap)this.cordova.getActivity()).startActivity(i);
-    }
-
-    void sendBroadcast(String action, Map<String, String> extras) {
-        Intent intent = new Intent();
-        intent.setAction(action);
-        for (String key : extras.keySet()) {
-            String value = extras.get(key);
-            intent.putExtra(key, value);
-        }
-
-        ((DroidGap)this.cordova.getActivity()).sendBroadcast(intent);
     }
 }
