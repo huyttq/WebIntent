@@ -91,7 +91,6 @@ public class WebIntent extends CordovaPlugin {
             return false;
         } catch (JSONException e) {
             e.printStackTrace();
-            callbackContext.error(e.getMessage());
 			return false;
         }
     }
