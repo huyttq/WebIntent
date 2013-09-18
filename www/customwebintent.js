@@ -7,7 +7,7 @@ cordova.define("cordova/plugin/CustomWebIntent",
   function (require, exports, module) {
     var exec = require("cordova/exec");
     
-    var CustomCustomWebIntent = function() {};
+    var CustomWebIntent = function() {};
 
     CustomWebIntent.prototype.ACTION_SEND = "android.intent.action.SEND";
     CustomWebIntent.prototype.ACTION_VIEW= "android.intent.action.VIEW";
