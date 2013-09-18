@@ -1,4 +1,4 @@
-package org.apache.cordova.plugin.webintent;
+package org.apache.cordova.plugin.customwebintent;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -24,7 +24,7 @@ import org.apache.cordova.PluginResult.Status;
  * @author boris@borismus.com
  * 
  */
-public class WebIntent extends CordovaPlugin {
+public class CustomWebIntent extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) {
