@@ -8,7 +8,7 @@ You may want to port the rest in similar way
 
 1. Add plugin via CLI: 
 	`phonegap local plugin add https://github.com/huyttq/WebIntent.git`
-2. Include customwebintent.js in your app then: 
+2. Call this in your app: 
  
 ```
 	var webIntent = cordova.require("cordova/plugin/CustomWebIntent");
