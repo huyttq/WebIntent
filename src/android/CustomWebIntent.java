@@ -3,7 +3,6 @@ package org.apache.cordova.plugin.customwebintent;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.cordova.DroidGap;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -13,6 +12,7 @@ import android.net.Uri;
 import android.util.Log;
 import android.text.Html;
 
+import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
@@ -85,6 +85,6 @@ public class CustomWebIntent extends CordovaPlugin {
                 i.putExtra(key, value);
             }
         }
-        ((DroidGap)this.cordova.getActivity()).startActivity(i);
+        ((CordovaActivity)this.cordova.getActivity()).startActivity(i);
     }
 }
