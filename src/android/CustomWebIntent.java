@@ -12,7 +12,6 @@ import android.net.Uri;
 import android.util.Log;
 import android.text.Html;
 
-import org.apache.cordova.CordovaActivity;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.apache.cordova.PluginResult;
@@ -85,6 +84,6 @@ public class CustomWebIntent extends CordovaPlugin {
                 i.putExtra(key, value);
             }
         }
-        ((CordovaActivity)this.cordova.getActivity()).startActivity(i);
+        this.cordova.getActivity().startActivity(i);
     }
 }
